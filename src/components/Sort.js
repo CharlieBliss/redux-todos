@@ -13,19 +13,25 @@ const customStyles = {
 		width: '200%',
 		fontSize: '10px',
 		color: conf.purple,
+		fontFamily: conf.fontFamily,
+
 	}),
 	dropdownIndicator: (provided) => ({
 		...provided,
 		color: conf.purple,
+
 	}),
 	menu: (provided) => ({
 		...provided,
 		width: '200%',
+		fontFamily: conf.fontFamily,
+
 	}),
 	option: (provided, state) => ({
 		...provided,
 		border: 'none',
 		fontSize: '10px',
+		fontFamily: conf.fontFamily,
 	}),
 }
 

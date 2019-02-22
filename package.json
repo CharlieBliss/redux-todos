@@ -6,9 +6,8 @@
     "react-scripts": "^2.0.2"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
     "jss-nested": "^6.0.1",
-    "lodash.sortby": "^4.7.0",
+    "lodash.orderby": "^4.6.0",
     "moment": "^2.24.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",

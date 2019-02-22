@@ -4,5 +4,6 @@ export default {
 	black: '#292f33',
 	red: '#F12F35',
 	orange: '#FDA03E',
+	yellow: '#ffbe42',
 	fontFamily: 'Nanum Gothic'
 }

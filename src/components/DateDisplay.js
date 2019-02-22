@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
 import withStyles from 'react-jss'
 import * as dateDisplay from '../logic/date'
 
@@ -15,7 +14,7 @@ const DateDisplay = ({ classes, date, id, onClick }) => (
 		<div>
 		{dateDisplay.setDateText(date)}
 		</div>
-		<i onClick={onClick} className={classnames("material-icons", classes.icon)}> calendar_today </i>
+		<i onClick={onClick} className="material-icons"> calendar_today </i>
 	</div>
 )
 

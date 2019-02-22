@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
 import Checkbox from './Checkbox'
+import conf from '../constants/css'
 import { updateDate } from '../actions'
 import SetDate from '../containers/SetDate'
 
@@ -12,6 +13,8 @@ const styles = {
 		borderBottom: '1px solid lightgrey',
 		marginBottom: '10px',
 		fontSize: '11px',
+		fontFamily: conf.fontFamily,
+
 	}),
 	iconContainer: {
 		marginRight: '5px',

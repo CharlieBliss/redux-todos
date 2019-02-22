@@ -2,13 +2,13 @@ import moment from 'moment'
 import dateFormat from '../constants/date'
 import conf from '../constants/css'
 
-const isToday = (date) => moment(date, dateFormat).isSame(moment(), 'day')
+export const isToday = (date) => moment(date, dateFormat).isSame(moment(), 'day')
 
-const isPast = (date) => moment(date, dateFormat).isBefore(moment(), 'day')
+export const isPast = (date) => moment(date, dateFormat).isBefore(moment(), 'day')
 
-const isTomorrow = (date) => moment(date, dateFormat).isSame(moment().add(1, 'day'), 'day')
+export const isTomorrow = (date) => moment(date, dateFormat).isSame(moment().add(1, 'day'), 'day')
 
-const isYesterday = (date) => moment(date, dateFormat).isSame(moment().subtract(1, 'day'), 'day')
+export const isYesterday = (date) => moment(date, dateFormat).isSame(moment().subtract(1, 'day'), 'day')
 
 
 export const setDateColor = (date) => {

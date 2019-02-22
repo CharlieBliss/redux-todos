@@ -11,6 +11,7 @@ const styles = {
 		height: '180px',
 		padding: '20px',
 		fontSize: '40px',
+		fontFamily: conf.fontFamily,
 		backgroundColor: conf.purple,
 		color: 'white',
 		marginBottom: '30px',
@@ -18,6 +19,7 @@ const styles = {
 	subHead: {
 		color: 'white',
 		fontSize: '20px',
+		fontFamily: conf.fontFamily,
 	}
 }
 const Header = ({ classes }) => (

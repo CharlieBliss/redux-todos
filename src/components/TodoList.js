@@ -16,6 +16,7 @@ const styles = {
 	title: {
 		color: conf.purple,
 		fontWeight: 'bold',
+		fontFamily: conf.fontFamily,
 	}
 }
 const TodoList = ({ classes, todos, toggleTodo, sortable, hidden, title, showCompleted, completable }) => {
