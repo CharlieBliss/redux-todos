@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { PropTypes } from 'prop-types'
 import withStyle from 'react-jss'
 import { connect } from 'react-redux'
 import { addTodo, saveCompletedStatus } from '../actions'
@@ -9,14 +10,14 @@ const styles = {
 	wrapper: {
 		width: '65%',
 	},
-	'form': {
+	form: {
 		display: 'flex',
 		flexDirection: 'row',
 		border: '1px solid grey',
 		padding: '10px',
 		background: 'white',
 	},
-	'input': {
+	input: {
 		flexGrow: '12',
 		border: 'none',
 		color: conf.purple,
@@ -24,30 +25,30 @@ const styles = {
 			outline: 'none',
 		},
 	},
-	'button': {
+	button: {
 		border: 'none',
 		cursor: 'pointer',
 		color: conf.purple,
 		'&:focus': {
 			outline: 'none',
 		},
-	}
+	},
 }
 
 const AddTodo = ({ classes, dispatch }) => {
 	const [input, setInput] = useState('')
-	const handleChange = (e, setInput) => {
+	const handleChange = (e, stateSetInput) => {
 		e.preventDefault()
-		setInput(e.target.value)
+		stateSetInput(e.target.value)
 	}
 
-	const handleSubmit = (e, input, setInput, dispatch) => {
-	    e.preventDefault()
-	    if (input.trim()) {
-	    	dispatch(addTodo(input))
-	    	dispatch(saveCompletedStatus())
-	    }
-	   	setInput('')
+	const handleSubmit = (e, stateInput, stateSetInput, reduxDispatch) => {
+		e.preventDefault()
+		if (stateInput.trim()) {
+			reduxDispatch(addTodo(stateInput))
+			reduxDispatch(saveCompletedStatus())
+		}
+		stateSetInput('')
 	}
 
 	return (
@@ -62,13 +63,21 @@ const AddTodo = ({ classes, dispatch }) => {
 						value={input}
 						onChange={e => handleChange(e, setInput)}
 					/>
-					<button className={classes.button} type="submit">
+					<button
+						className={classes.button}
+						type="submit"
+					>
 						ADD
 					</button>
 				</div>
 			</form>
 		</div>
 	)
+}
+
+AddTodo.propTypes = {
+	classes: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
 }
 
 export default connect()(withStyle(styles)(AddTodo))

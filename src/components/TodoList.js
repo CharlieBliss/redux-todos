@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import conf from '../constants/css'
 import withStyles from 'react-jss'
+import conf from '../constants/css'
 import Todo from './Todo'
 import SetSort from '../containers/SetSort'
 
 
 const styles = {
 	listWrapper: {
-		width: '40%'
+		width: '40%',
 	},
 	sort: {
 		width: '50%',
@@ -17,18 +17,26 @@ const styles = {
 		color: conf.purple,
 		fontWeight: 'bold',
 		fontFamily: conf.fontFamily,
-	}
+	},
 }
-const TodoList = ({ classes, todos, toggleTodo, sortable, hidden, title, showCompleted, completable }) => {
-	const renderTodos = () =>
-		todos.map(todo => (
-			<Todo
-				key={todo.id}
-				{...todo}
-				completable={completable}
-				onClick={() => completable ? toggleTodo(todo.id) : {}}
-			/>
-		))
+const TodoList = ({
+	classes,
+	todos,
+	toggleTodo,
+	sortable,
+	hidden,
+	title,
+	showCompleted,
+	completable,
+}) => {
+	const renderTodos = () => todos.map(todo => (
+		<Todo
+			key={todo.id}
+			{...todo}
+			completable={completable}
+			onClick={() => (completable ? toggleTodo(todo.id) : {})}
+		/>
+	))
 	const renderSort = () => {
 		if (sortable) {
 			return <SetSort />
@@ -52,12 +60,20 @@ const TodoList = ({ classes, todos, toggleTodo, sortable, hidden, title, showCom
 }
 
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    completed: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired,
-  toggleTodo: PropTypes.func.isRequired
+	todos: PropTypes.arrayOf(PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		completed: PropTypes.bool,
+		text: PropTypes.string.isRequired,
+		tempCompleted: PropTypes.bool,
+		date: PropTypes.string,
+	}).isRequired).isRequired,
+	toggleTodo: PropTypes.func.isRequired,
+	sortable: PropTypes.bool,
+	hidden: PropTypes.bool,
+	title: PropTypes.string,
+	showCompleted: PropTypes.bool,
+	completable: PropTypes.bool,
+	classes: PropTypes.object,
 }
 
 export default withStyles(styles)(TodoList)

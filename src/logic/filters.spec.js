@@ -97,7 +97,7 @@ const MOCK_ONLY_NEW_LIST = [
 	{
 		id: 4,
 		text: 'Medium Rare',
-	}
+	},
 ]
 
 const MOCK_ONLY_ACTIVE_LIST = [

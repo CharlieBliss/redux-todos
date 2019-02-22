@@ -7,7 +7,7 @@ import { Sorts } from '../constants/filters'
 
 const customStyles = {
 	// React-select has built in styling options.
-	control: (provided, isFocused) => ({
+	control: provided => ({
 		...provided,
 		border: 'none',
 		width: '200%',
@@ -16,18 +16,18 @@ const customStyles = {
 		fontFamily: conf.fontFamily,
 
 	}),
-	dropdownIndicator: (provided) => ({
+	dropdownIndicator: provided => ({
 		...provided,
 		color: conf.purple,
 
 	}),
-	menu: (provided) => ({
+	menu: provided => ({
 		...provided,
 		width: '200%',
 		fontFamily: conf.fontFamily,
 
 	}),
-	option: (provided, state) => ({
+	option: provided => ({
 		...provided,
 		border: 'none',
 		fontSize: '10px',
@@ -39,7 +39,7 @@ const customStyles = {
 const Sort = ({ onChange }) => (
 	<Select
 		options={Sorts}
-		onChange={(sort) => onChange(sort.value)}
+		onChange={sort => onChange(sort.value)}
 		styles={customStyles}
 		defaultValue={Sorts[0]}
 	/>

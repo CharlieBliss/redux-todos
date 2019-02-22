@@ -4,26 +4,26 @@ export const INITIAL_STATE = {
 }
 
 export const VisibilityFilters = {
-  SHOW_NEW: 'SHOW_NEW',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
+	SHOW_NEW: 'SHOW_NEW',
+	SHOW_COMPLETED: 'SHOW_COMPLETED',
+	SHOW_ACTIVE: 'SHOW_ACTIVE',
 }
 
 export const Sorts = [
 	{
 		label: 'Date (Soonest)',
-		value: 'date'
+		value: 'date',
 	},
 	{
 		label: 'Date (Farthest)',
-		value: '-date'
+		value: '-date',
 	},
 	{
 		label: 'Name (A-Z)',
-		value: 'name'
+		value: 'name',
 	},
 	{
 		label: 'Name (Z-A)',
-		value: '-name'
+		value: '-name',
 	},
 ]

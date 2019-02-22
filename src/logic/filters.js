@@ -12,19 +12,19 @@ export const getVisibleTodos = (todos, filter) => {
 		case VisibilityFilters.SHOW_NEW:
 			return todos.filter(t => !t.date)
 		default:
-			throw new Error('Unknown filter: ' + filter)
+			throw new Error(`Unknown filter: ${filter}`)
 	}
 }
 
 export const sortTodos = (todos, sort) => {
-	if(!todos.length) {
+	if (!todos.length) {
 		return []
 	}
 	if (sort.includes(Sorts[2].value)) {
-		return orderBy(todos, (todo) => todo.text, (sort === Sorts[2].value ? 'asc' : 'desc'))
+		return orderBy(todos, todo => todo.text, (sort === Sorts[2].value ? 'asc' : 'desc'))
 	}
 	if (sort.includes(Sorts[0].value)) {
-		return orderBy(todos, (todo) => moment(todo.date, dateFormat).toDate(), (sort === Sorts[0].value ? 'asc' : 'desc'))
+		return orderBy(todos, todo => moment(todo.date, dateFormat).toDate(), (sort === Sorts[0].value ? 'asc' : 'desc'))
 	}
 	return todos
 }

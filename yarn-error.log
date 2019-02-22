@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/charlesbliss/.nvm/versions/node/v10.9.0/bin/node /usr/local/Cellar/yarn/1.12.3/libexec/bin/yarn.js add moment.js
+  /Users/charlesbliss/.nvm/versions/node/v10.9.0/bin/node /usr/local/Cellar/yarn/1.12.3/libexec/bin/yarn.js add eslint-config-aribnb
 
 PATH: 
   /Users/charlesbliss/.nvm/versions/node/v10.9.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/moment.js: Not found
+  Error: https://registry.yarnpkg.com/eslint-config-aribnb: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:65894:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.12.3/libexec/lib/cli.js:129018:22)
       at Request.emit (events.js:182:13)
@@ -35,11 +35,15 @@ npm manifest:
       "react-scripts": "^2.0.2"
     },
     "dependencies": {
+      "jss-nested": "^6.0.1",
+      "lodash.orderby": "^4.6.0",
+      "moment": "^2.24.0",
       "prop-types": "^15.6.1",
       "react": "^16.3.1",
       "react-datepicker": "^2.1.0",
       "react-dom": "^16.3.1",
       "react-jss": "^8.6.1",
+      "react-material-layout": "^1.1.11",
       "react-redux": "^5.0.7",
       "react-select": "^2.4.1",
       "redux": "^3.5.2"
@@ -2328,7 +2332,7 @@ Lockfile:
       isobject "^3.0.0"
       static-extend "^0.1.1"
   
-  classnames@^2.2.5:
+  classnames@^2.2.5, classnames@^2.2.6:
     version "2.2.6"
     resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
     integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -6173,6 +6177,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
     integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
   
+  lodash.orderby@^4.6.0:
+    version "4.6.0"
+    resolved "https://registry.yarnpkg.com/lodash.orderby/-/lodash.orderby-4.6.0.tgz#e697f04ce5d78522f54d9338b32b81a3393e4eb3"
+    integrity sha1-5pfwTOXXhSL1TZM4syuBozk+TrM=
+  
   lodash.sortby@^4.7.0:
     version "4.7.0"
     resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
@@ -6529,6 +6538,11 @@ Lockfile:
     integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
     dependencies:
       minimist "0.0.8"
+  
+  moment@^2.24.0:
+    version "2.24.0"
+    resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+    integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
   
   move-concurrently@^1.0.1:
     version "1.0.1"
@@ -8298,6 +8312,11 @@ Lockfile:
     version "3.0.4"
     resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
     integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+  
+  react-material-layout@^1.1.11:
+    version "1.1.11"
+    resolved "https://registry.yarnpkg.com/react-material-layout/-/react-material-layout-1.1.11.tgz#b901ee44e4f1aecb562c6a902a6b9936fc33a925"
+    integrity sha512-XOXeQv8bnLTm0DNdigkDcFmlcjHcnavSKFxD7sJ1/QJavi+HM2tXY7RsA9GbWLo9iNzYVdMxDepcABw9Sto79A==
   
   react-onclickoutside@^6.7.1:
     version "6.7.1"

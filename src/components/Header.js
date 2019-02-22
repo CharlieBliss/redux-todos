@@ -1,6 +1,6 @@
 import React from 'react'
 import withStyles from 'react-jss'
-import classnames from 'classnames'
+import PropTypes from 'prop-types'
 import conf from '../constants/css'
 import AddTodo from '../containers/AddTodo'
 
@@ -20,7 +20,7 @@ const styles = {
 		color: 'white',
 		fontSize: '20px',
 		fontFamily: conf.fontFamily,
-	}
+	},
 }
 const Header = ({ classes }) => (
 	<div
@@ -36,5 +36,10 @@ const Header = ({ classes }) => (
 		<AddTodo />
 	</div>
 )
+
+Header.propTypes = {
+	classes: PropTypes.object.isRequired,
+}
+
 
 export default withStyles(styles)(Header)

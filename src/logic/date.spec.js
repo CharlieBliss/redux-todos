@@ -1,5 +1,5 @@
-import * as date from './date'
 import moment from 'moment'
+import * as date from './date'
 import conf from '../constants/css'
 import dateFormat from '../constants/date'
 
@@ -7,7 +7,7 @@ describe('Date Functions', () => {
 	it('should return true if the argument is today', () => {
 		expect(date.isToday(moment())).toBeTruthy()
 	})
-		it('should return false if the argument is not today', () => {
+	it('should return false if the argument is not today', () => {
 		expect(date.isToday(moment().add(1, 'day'))).toBeFalsy()
 	})
 	describe('IsTomorrow', () => {

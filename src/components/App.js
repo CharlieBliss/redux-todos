@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
 import FilterLink from '../containers/FilterLink'
 import Header from './Header'
-import { VisibilityFilters, Sorts } from '../constants/filters'
-import conf from '../constants/css'
+import { VisibilityFilters } from '../constants/filters'
 import VisibleTodoList from '../containers/VisibleTodoList'
 
 
@@ -12,35 +12,37 @@ const styles = {
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'center',
-		'alignItems': 'center',
+		alignItems: 'center',
 	},
 
 }
 
-const App = ({classes}) => {
-	return (
-		<div className={classes.app}>
-			<Header />
-			<VisibleTodoList
-				title="New Tasks"
-				filter={VisibilityFilters.SHOW_NEW}
-			/>
-			<VisibleTodoList
-				title="Unfinished Tasks"
-				filter={VisibilityFilters.SHOW_ACTIVE}
-				sortable
-				completable
+const App = ({ classes }) => (
+	<div className={classes.app}>
+		<Header />
+		<VisibleTodoList
+			title="New Tasks"
+			filter={VisibilityFilters.SHOW_NEW}
+		/>
+		<VisibleTodoList
+			title="Unfinished Tasks"
+			filter={VisibilityFilters.SHOW_ACTIVE}
+			sortable
+			completable
 
-			/>
-			<FilterLink />
-			<VisibleTodoList
-				title="Completed Tasks"
-				filter={VisibilityFilters.SHOW_COMPLETED}
-				hidden
-				completable
-			/>
-		</div>
-	)
+		/>
+		<FilterLink />
+		<VisibleTodoList
+			title="Completed Tasks"
+			filter={VisibilityFilters.SHOW_COMPLETED}
+			hidden
+			completable
+		/>
+	</div>
+)
+
+App.propTypes = {
+	classes: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(App)

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import moment from 'moment'
 import { toggleTodo } from '../actions'
 import { sortTodos, getVisibleTodos } from '../logic/filters'
 import TodoList from '../components/TodoList'
@@ -11,10 +10,10 @@ const mapStateToProps = (state, props) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-	toggleTodo: id => dispatch(toggleTodo(id))
+	toggleTodo: id => dispatch(toggleTodo(id)),
 })
 
 export default connect(
 	mapStateToProps,
-	mapDispatchToProps
+	mapDispatchToProps,
 )(TodoList)

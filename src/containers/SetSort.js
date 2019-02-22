@@ -1,16 +1,19 @@
 import { connect } from 'react-redux'
-import { setSort } from '../actions'
+import { setSort, saveCompletedStatus } from '../actions'
 import Sort from '../components/Sort'
 
 const mapStateToProps = state => ({
- 	showCompleted: state.visibilityFilter.sort,
+	showCompleted: state.visibilityFilter.sort,
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  onChange: (value) => dispatch(setSort(value))
+const mapDispatchToProps = dispatch => ({
+	onChange: (value) => {
+		dispatch(setSort(value))
+		dispatch(saveCompletedStatus())
+	},
 })
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+	mapStateToProps,
+	mapDispatchToProps,
 )(Sort)
